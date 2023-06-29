@@ -30,6 +30,6 @@ deactivate server
 
 browser->>server: GET [https://studies.cs.helsinki.fi/exampleapp/data.json](https://studies.cs.helsinki.fi/exampleapp/spa)
 activate server
-server-->>browser: HTML document
+server-->>browser: 404
 deactivate server
 ```
