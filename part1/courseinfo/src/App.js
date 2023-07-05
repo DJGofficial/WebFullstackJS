@@ -22,9 +22,8 @@ const App = () => {
       const Content = (props) => {
         return (
           <div>
-            <p>
-              {props.part1} {props.exercises1}
-            </p>
+         <Part part1= {props.part1}/>
+         <p>part1+part1+part1</p>
             <p>
               {props.part2} {props.exercises2}
             </p>
