@@ -1,3 +1,3 @@
  [submodule "/home/E_Little/webfullstack/WebFullstackJS/playgroundreact"]
- path = /home/E_Little/webfullstack/WebFullstackJS/playgroundreact
- url = https://github.com/DJGofficial/WebFullstackJS.git /home/E_Little/webfullstack/WebFullstackJS/playgroundreact
+ path = playgroundreact
+ url = https://github.com/DJGofficial/WebFullstackJS.git 
