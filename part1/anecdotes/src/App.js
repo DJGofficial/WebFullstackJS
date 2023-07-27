@@ -14,21 +14,12 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
-  const [randomNumber, setRandomNumber] = useState(0);
-  const points =[0,0,0,0,0,0,0,0];
-  let selectedOption = -1; 
+  const [points, setPoints] = useState(new Array(anecdotes.length).fill(0));
 
-  const voteClick = (number) => ()=>{
-    points[number] +=1
-    updateVoteCount()
-    console.log('Points array '+points[number])  
-  };
-
-  
-  const updateVoteCount = () => {
-    const voteCountDiv = document.getElementById('voteCount');
-    voteCountDiv.textContent = 
-    `has ${points.reduce((sum, value) => sum + value, 0)} votes`;
+  const voteClick = () =>{
+    const copy = [...points]
+    copy[selected] +=1
+    setPoints(copy)
   };
 
   const randomInt = (min, max) => {
@@ -39,14 +30,14 @@ const App = () => {
     const min = 0;
     const max = 7;
     const newRandomNumber = randomInt(min, max);
-    setRandomNumber(newRandomNumber);
+    setSelected(newRandomNumber);
   };
 
   return (
     <div>
-        <div>{anecdotes[randomNumber]}</div>
-        <div id="voteCount">has 0 votes</div>
-        <button onClick={voteClick(randomNumber)}>vote</button>
+        <div>{anecdotes[selected]}</div>
+        <div>has {points[selected]} votes</div>
+        <button onClick={()=> voteClick()}>vote</button>
       <button onClick={generateRandomNumber}>next anecdote</button>
     </div>
   )
