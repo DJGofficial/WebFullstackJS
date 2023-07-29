@@ -18,6 +18,7 @@ const App = () => {
   const largestNumber = Math.max(...points);
   console.log(largestNumber)
 
+  
   const voteClick = () =>{
     const copy = [...points]
     copy[selected] +=1
